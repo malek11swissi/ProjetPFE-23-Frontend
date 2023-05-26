@@ -1,0 +1,12 @@
+.card-header {
+    background-color: #ffffff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .card-header h3 {
+    font-size: 30px;
+    color: #09033B;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }

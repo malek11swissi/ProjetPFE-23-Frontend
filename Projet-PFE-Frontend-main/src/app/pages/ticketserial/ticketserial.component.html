@@ -1,0 +1,35 @@
+<<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      <strong>Réservation Ticket</strong>
+    </h3>
+  </header>
+  <p>
+    <strong>Agence: </strong>
+    {{ currentUser.username }}
+  </p>
+  <p>
+    <strong>Téléphone:</strong>
+    {{ currentUser.telephone }}
+  </p>
+  <p>
+    <!--<strong>Prix:</strong>
+    {{ prix}}
+  </p>-->
+  <p>
+    <strong>Numéro Ticket:</strong>
+    {{ serial }}
+  </p>
+  <p>
+    <strong>Numéro Compteur:</strong>
+    {{ numCompteur }}
+  </p>
+  <p>
+    <i>Merci pour votre visite.</i>
+  </p>
+
+</div>
+
+<ng-template #loggedOut>
+  Please login.
+</ng-template>
