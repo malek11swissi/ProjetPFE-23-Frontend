@@ -122,6 +122,26 @@ export class UserListComponent implements OnInit {
     this.deleteUser = undefined
   } 
 
+  blockUser(id:number)
+  {
+    this.userService.blockUser(id).subscribe(
+      res => {
+        this.toastr.warning('Utilisateur bloqué ' , 'Succès')
+        this.getAllUsers();
+      }
+    )
+  }
+
+  unblockUser(id:number)
+  {
+    this.userService.unblockUser(id).subscribe(
+      res => {
+        this.toastr.success('Utilisateur débloqué ' , 'Succès');
+        this.getAllUsers();
+      }
+    )
+  }
+
 }
 
   

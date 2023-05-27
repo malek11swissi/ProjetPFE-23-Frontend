@@ -25,8 +25,8 @@
           <td style="text-align: center;"> {{user.username}} </td>
           <td style="text-align: center;">{{user.telephone}}</td>
           <td style="text-align: center;">
-            <button *ngIf="!user.active" (click)="deleteUser " class="btn btn-success" style="margin-left: 10px;    margin-right: 10px;"> <i class="fa-solid fa-lock-open"></i> </button>
-            <button *ngIf="user.active"(click)="deleteUser" class="btn btn-warning" style="margin-left: 10px;    margin-right: 10px; ">  <i class="fa-solid fa-lock"  style="color: #ffffff;"></i> </button>
+            <button *ngIf="!user.active" (click)="unblockUser(user.id) " class="btn btn-success" style="margin-left: 10px;    margin-right: 10px;"> <i class="fa-solid fa-lock-open"></i> </button>
+            <button *ngIf="user.active"(click)="blockUser(user.id)" class="btn btn-warning" style="margin-left: 10px;    margin-right: 10px; ">  <i class="fa-solid fa-lock"  style="color: #ffffff;"></i> </button>
            
           </td>
         </tr>

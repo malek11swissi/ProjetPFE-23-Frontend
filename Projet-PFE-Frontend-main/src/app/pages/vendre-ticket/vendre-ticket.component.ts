@@ -1,5 +1,6 @@
 
 
+
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from "rxjs";
@@ -13,6 +14,8 @@ import { CompteurService } from '../../services/compteur.service';
 import { CompteurLoggedUserService } from '../../services/compteurLoggedUser.service';
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrService } from 'ngx-toastr';
+import { PackService } from 'src/app/services/pack.service';
+import { Pack } from 'src/app/models/Pack';
 
 
 
@@ -25,19 +28,23 @@ export class VendreicketComponent implements OnInit {
 
   ticket: Ticket = new Ticket();
   typetokens: Observable<Typetoken[]>;
-  compteurs: Observable<Compteur[]>;
+ packs: Observable<Pack[]>;
+ pack : Pack = new Pack();
 
   submitted = false;
   username: string;
   serial: number;
   prix: number;
   numCompteur: string;
+  
+  
   @ViewChild('contentSell', { static: true }) private contentSell: TemplateRef<any>;
   successSell:boolean = false ;
   constructor(private ticketService: TicketService, private typetokenService: TypetokenService,
     private compteurService: CompteurService, private router: Router, private tokenStorageService: TokenStorageService,
      private compteurLoggedUserService: CompteurLoggedUserService,
      private modalService: NgbModal,
+     private packservice : PackService , 
      private toastr: ToastrService) { }
 
   ngOnInit() {
@@ -93,10 +100,11 @@ export class VendreicketComponent implements OnInit {
         },
         error => console.log(error) , () => {
           this.modalService.dismissAll()
-          this.toastr.warning('ticket vendre avec succées!', 'Succès!');
+          this.toastr.success('ticket vendre avec succées!', 'Succès!');
           this.successSell = true
           this.ticket = new Ticket() ; 
           this.submitted = false ;
+        
         });
       
        // this.router.navigate(['tickets', this.serial, this.numCompteur]);

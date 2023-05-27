@@ -19,13 +19,13 @@
     style="position: absolute; top: -25px;right: -14px;padding: 10px;z-index: 1111; cursor: pointer;">
     <i class="fa fa-circle fa-stack-2x" style=" -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-             background-color: #d1ef12; " >
+             background-color: #d5e77f; " >
     </i>
-    <i class=" fa  fa-times fa-stack-1x " style="color: black;font-size: 19px;"></i>
+    <i class=" fa  fa-times fa-stack-1x " style="color: rgb(255, 255, 255);font-size: 19px;"></i>
   </span>
   
   <div class="modal-header">
-    <h4 class="m-0 font-weight-bold text-primary">Transférer vers autre compte</h4>
+    <h4 class="m-0 font-weight-bold">Transférer vers autre compte</h4>
   </div>
   
   <div class="modal-body">
@@ -53,7 +53,7 @@
             <div *ngIf="submittedTransfert && somme.errors  " class="invalid-feedback">
                 <div *ngIf="somme.errors.required">* Montant est obligatoire</div>
                   
-                <div *ngIf="somme.errors.min">*Monatant ne doit etre négative </div>
+                <div *ngIf="somme.errors.min">*Monatant ne doit pas etre négative </div>
                
               </div>
         </div>
@@ -67,48 +67,7 @@
   </div>
   
   </ng-template>
-  
-  <!-- <ng-template #contentAlimenter let-modal>
-    <span class="fa-stack fa-1x" (click)="modal.dismiss('cancel click')"
-    style="position: absolute; top: -25px;right: -14px;padding: 10px;z-index: 1111; cursor: pointer;">
-    <i class="fa fa-circle fa-stack-2x" style=" -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-             background-color: #d5e77f; " >
-    </i>
-    <i class=" fa  fa-times fa-stack-1x " style="color: rgb(255, 255, 255);font-size: 19px;"></i>
-  </span>
-  
-  <div class="modal-header">
-    <h4 class="m-0 font-weight-bold">Alimenter votre compte</h4>
-  </div>
-  
-  <div class="modal-body">
-    <form [formGroup]="form_Alimenter" (ngSubmit)="alimenterMonSolde()">
-        <div class="mb-3">
-            <label for="montant">Montant</label>
-            <div class="input-group">
-                
-                    <input type="number" aria-required="true" class="form-control" id="montant"  placeholder="montant" required
-                    [(ngModel)]="montant" name="montant"  formControlName="montant" 
-                    [ngClass]="{ 'is-invalid': submittedAlimenter && montant.errors }"  min="0">
-                    <div *ngIf="submittedAlimenter && montant.errors  " class="invalid-feedback">
 
-
-                <div *ngIf="submittedAlimenter && montant.errors  " class="invalid-feedback">
-                <div *ngIf="montant.errors.required">* Montant est obligatoire</div>
-                <div *ngIf="montant.errors.min">*Monatant ne doit etre négative </div>
-                 
-              </div>
-            </div>
-            <br>
-            <button type="button" class="btn btn-success" (click)="alimenterMonSolde()">Alimenter</button>
-          </form>
-        </div>
-        
-        </ng-template>-->
-
-
-  
 
 
       <ng-template #contentAlimenter let-modal>
@@ -155,3 +114,43 @@
         </div>
         
         </ng-template>
+
+
+        <!-- <ng-template #contentAlimenter let-modal>
+    <span class="fa-stack fa-1x" (click)="modal.dismiss('cancel click')"
+    style="position: absolute; top: -25px;right: -14px;padding: 10px;z-index: 1111; cursor: pointer;">
+    <i class="fa fa-circle fa-stack-2x" style=" -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+             background-color: #d5e77f; " >
+    </i>
+    <i class=" fa  fa-times fa-stack-1x " style="color: rgb(255, 255, 255);font-size: 19px;"></i>
+  </span>
+  
+  <div class="modal-header">
+    <h4 class="m-0 font-weight-bold">Alimenter votre compte</h4>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="form_Alimenter" (ngSubmit)="alimenterMonSolde()">
+        <div class="mb-3">
+            <label for="montant">Montant</label>
+            <div class="input-group">
+                
+                    <input type="number" aria-required="true" class="form-control" id="montant"  placeholder="montant" required
+                    [(ngModel)]="montant" name="montant"  formControlName="montant" 
+                    [ngClass]="{ 'is-invalid': submittedAlimenter && montant.errors }"  min="0">
+                    <div *ngIf="submittedAlimenter && montant.errors  " class="invalid-feedback">
+
+
+                <div *ngIf="submittedAlimenter && montant.errors  " class="invalid-feedback">
+                <div *ngIf="montant.errors.required">* Montant est obligatoire</div>
+                <div *ngIf="montant.errors.min">*Monatant ne doit etre négative </div>
+                 
+              </div>
+            </div>
+            <br>
+            <button type="button" class="btn btn-success" (click)="alimenterMonSolde()">Alimenter</button>
+          </form>
+        </div>
+        
+        </ng-template>-->

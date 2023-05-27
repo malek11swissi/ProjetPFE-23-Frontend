@@ -64,11 +64,11 @@ updateMarchand(marchand:MarchandInfos):Observable<any> {
 }
 
 blockUser(id:number):Observable<any> {
-  return this.http.get(this.baseUrl + "/blockUser/"+id);
+  return this.http.put(this.baseUrl + "/blockUser/"+id,null,{responseType:'text'});
 }
 
 unblockUser(id:number):Observable<any> {
-  return this.http.get(this.baseUrl + "/unblockUser/"+id);
+  return this.http.put(this.baseUrl + "/unblockUser/"+id,null,{responseType:'text'});
 }
 
 }

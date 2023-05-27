@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { PanierService } from "../../services/panier.service";
 import { Panier } from "../../models/panier";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { Router } from '@angular/router';
 import { TokenStorageService } from '../../services/token-storage.service';
 import { ToastrService } from "ngx-toastr";
@@ -16,6 +16,11 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 export class PanierListComponent implements OnInit {
   paniers: Observable<Panier[]>;
   username: string;
+  
+  @ViewChild('contentSell', { static: true }) private contentSell: TemplateRef<any>;
+  successSell:boolean = false ;
+  panier : Panier = new Panier() ; 
+ 
 
   constructor(private panierService: PanierService,
     private tokenStorageService: TokenStorageService,
@@ -27,7 +32,13 @@ export class PanierListComponent implements OnInit {
     this.reloadData();
   }
 
+ 
+   
+ 
+
+
   reloadData() {
+  
     const user = this.tokenStorageService.getUser();
 
     this.username = user.username;
@@ -37,13 +48,23 @@ export class PanierListComponent implements OnInit {
     this.paniers = this.panierService.getPaniersList(this.username);
   }
 
-  payerPanier(id: number) {
+  Payer(){
+    this.modalService.open(this.contentSell , {windowClass:'customModal' , backdrop: 'static', keyboard: false, centered: true})
+  }
+
+  ConfirmePayerPanier(id: number) {
+
+  
     this.panierService.payerPanier(id)
+    
       .subscribe(
         data => {
-       if(!data.success)
+       if(data.success)
        {
-        this.toastr.warning(data.message, 'Failure!');
+        this.modalService.dismissAll()
+        this.toastr.success('token payer avec succées!', 'Succès!');
+        this.successSell = true
+       
 
        }
           this.reloadData();
@@ -51,10 +72,7 @@ export class PanierListComponent implements OnInit {
         error => console.log(error));
   }
   
-
-  updatePanier(id: number){
-    this.router.navigate(['update-panier', id]);
-  }
+  
 
   cancelPaiement()
   {

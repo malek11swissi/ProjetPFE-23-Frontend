@@ -77,8 +77,9 @@ export class PorteMonnaieComponent implements OnInit {
 
     this.submittedTransfert= true ; 
     if (this.form_Transfert.invalid) {
-      return;
+      return ;
     }
+   
     this.soldeService.createtransfertSolde( this.transfertSolde)
       .subscribe(data => console.log(data), error => console.log(error));
     //this.transfertsolde = new TransfertSolde();
@@ -107,13 +108,14 @@ this.toastr.success("Vous avez alimenter votre solde d'un montant de"  + this.mo
 }*/
 alimenterMonSolde()
 {
- 
+  this.submittedAlimenter = true ;
 this.soldeService.alimenterCompte(this.montant).subscribe(res => {
-this.toastr.success("Vous avez alimenter votre solde d'un montant de"  + this.montant , "succès"  )
+this.toastr.success("Vous avez alimenter votre solde d'un montant de "  + this.montant , "succès"  )
 } , error => {} , () => {
   this.montant = 0;
   this.modalService.dismissAll();
   this.getMonSolde()
+  this.submittedAlimenter = false ;
 
 })
   }

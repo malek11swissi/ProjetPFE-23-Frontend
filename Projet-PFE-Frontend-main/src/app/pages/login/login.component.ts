@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   role: string = '';
-
+  isLocked:boolean = false ;
   constructor(private authService: AuthService, private tokenStorage: TokenStorageService , private router:Router) { }
 
   ngOnInit() {
@@ -23,6 +23,13 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.form).subscribe(
       data => {
+        console.log('data' , data)
+        if(data.accessToken == 'Votre compte est bloqué')
+        {
+          console.log('enter cond')
+          this.errorMessage = "Votre compte est bloqué"
+          this.isLocked = true ;
+        } 
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
@@ -45,6 +52,7 @@ export class LoginComponent implements OnInit {
         //this.reloadPage();
       },
       err => {
+
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
       }

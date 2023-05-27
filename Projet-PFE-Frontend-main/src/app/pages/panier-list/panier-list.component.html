@@ -17,9 +17,11 @@
           <tr *ngFor="let panier of paniers | async">
             <td>{{panier.token.compteur.libelle}}</td>
             <td>{{panier.token.typetoken.prix}} </td>
-            <td><button (click)="payerPanier(panier.id)" class="btn btn-danger">Payer</button>
-              <!--<button (click)="updatePanier(panier.id)" class="btn btn-info" style="margin-left: 10px">Modifier</button>-->
-            </td>
+           
+            <!--<td><button (click)="payerPanier(panier.id)" class="btn btn-danger">Payer</button>  </td>-->
+            <td> <button  type="button" (click)="Payer()" class="btn btn-success">Payer</button></td>
+           
+            
           </tr>
         </tbody>
       </table>
@@ -28,14 +30,14 @@
 </div>
 </div>
 
-<ng-template #contentDelete let-modal>
+<ng-template #contentSell let-modal>
   <span class="fa-stack fa-1x" (click)="modal.dismiss('cancel click')"
     style="position: absolute; top: -25px;right: -14px;padding: 10px;z-index: 1111; cursor: pointer;">
     <i class="fa fa-circle fa-stack-2x" style=" -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-             background-color: #d1ef12; ">
+             background-color: #d5e77f; ">
     </i>
-    <i class=" fa  fa-times fa-stack-1x " style="color: black;font-size: 19px;"></i>
+    <i class=" fa  fa-times fa-stack-1x " style="color: rgb(255, 255, 255);font-size: 19px;"></i>
   </span>
 
 
@@ -45,8 +47,12 @@
   </div>
 
   <div class="modal-footer">
-    <button type="button" (click)="confirmPayer()" class="btn btn-danger">Payer</button>
-    <button type="button" (click)="cancelPaiement()" class="btn btn-info">Annuler</button>
+    
+    <tr *ngFor="let panier of paniers | async">
+      <td> <button  type="button" (click)="ConfirmePayerPanier(panier.id)" class="btn btn-success">Payer</button></td>
+            <td><button type="button" (click)="cancelPaiement()" class="btn btn-info">Annuler</button></td> 
+    </tr>
+   
 
-  </div>
+   </div>
 </ng-template>

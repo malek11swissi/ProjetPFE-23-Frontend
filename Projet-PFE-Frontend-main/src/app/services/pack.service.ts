@@ -21,6 +21,10 @@ export class PackService {
     return this.http.get(this.baseUrl + '/getPackMarchand');
   }
 
+UpdatePack(value : any , id : number ) : Observable <any>{
+  return this.http.post(`${this.baseUrl}/${id}`, value) ;
+
+}
 
 
 }
