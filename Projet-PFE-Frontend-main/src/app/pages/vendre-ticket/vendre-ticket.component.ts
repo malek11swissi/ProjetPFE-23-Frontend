@@ -93,7 +93,7 @@ export class VendreicketComponent implements OnInit {
         },
         error => console.log(error) , () => {
           this.modalService.dismissAll()
-          this.toastr.warning('ticket vendre avec succées!', 'Succès!');
+          this.toastr.success('ticket vendre avec succées!', 'Succès!');
           this.successSell = true
           this.ticket = new Ticket() ; 
           this.submitted = false ;
