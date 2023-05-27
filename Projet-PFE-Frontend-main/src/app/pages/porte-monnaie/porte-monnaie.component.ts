@@ -85,6 +85,7 @@ export class PorteMonnaieComponent implements OnInit {
     //this.transfertsolde = new TransfertSolde();
     this.transfertSolde = new TransfertSolde();
     this.toastr.success('Transfert effectué!', 'Succès!');
+
     this.modalService.dismissAll();
     this.submittedTransfert= false ; 
   }
