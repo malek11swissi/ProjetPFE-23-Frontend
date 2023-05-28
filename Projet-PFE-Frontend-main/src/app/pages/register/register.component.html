@@ -1,151 +1,86 @@
-<!-- <div class="col-md-12">
-  <div class="card card-container">
-    <img
-      id="profile-img"
-      src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-      class="profile-img-card"
-    />
-    <form
-      *ngIf="!isSuccessful"
-      name="form"
-      (ngSubmit)="f.form.valid && onSubmit()"
-      #f="ngForm"
-      novalidate
-    >
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          class="form-control"
-          name="username"
-          [(ngModel)]="form.username"
-          required
-          minlength="3"
-          maxlength="20"
-          #username="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-          <div *ngIf="username.errors.minlength">
-            Username must be at least 3 characters
-          </div>
-          <div *ngIf="username.errors.maxlength">
-            Username must be at most 20 characters
-          </div>
-        </div>
-      </div>
-     <div class="form-group">
-        <label for="telephone">Telephone</label>
-        <input
-          type="telephone"
-          class="form-control"
-          name="telephone"
-          [(ngModel)]="form.telephone"
-          required
-          telephone
-          #telephone="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && telephone.invalid">
-          <div *ngIf="telephone.errors.required">Telephone is required</div>
-          <div *ngIf="telephone.errors.telephone">
-            Telephone must be a valid telephone address
-          </div>
-        </div>
-      </div>
-
-
-
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel"
-        />
-        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">
-            Le mot de passe doit comporter au moins 6 caractères
-          </div>
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block">Sign Up</button>
-      </div>
-
-   
-    </form>
-
-    
-  </div>
-</div> -->
-
-
 <section class="login">
   <div class="login_box">
     <div class="left">
-      <div class="top_link"><a href="#"><img src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download" alt="">retournez à l'accueil</a></div>
+      <div class="top_link">
+        <a href="#"
+          ><img
+            src="https://drive.google.com/u/0/uc?id=16U__U5dJdaTfNGobB_OpwAJ73vM50rPV&export=download"
+            alt=""
+          />retournez à l'accueil</a
+        >
+      </div>
       <div class="contact">
         <form
-        *ngIf="!isSuccessful"
-        name="form"
-        (ngSubmit)="f.form.valid && onSubmit()"
-        #f="ngForm"
-        novalidate
-      >
+          *ngIf="!isSuccessful"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate
+        >
           <h3>INSCRIVEZ VOUS</h3>
-     <div class="form-group">
-          <input type="text" placeholder="username" name="username" class="form-control"  [(ngModel)]="form.username"
-          required
-          minlength="3"
-          maxlength="20"
-          #username="ngModel"
-        />
-         <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-          <div *ngIf="username.errors.minlength">
-            Username must be at least 3 characters
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              class="form-control"
+              [(ngModel)]="form.username"
+              required
+              minlength="3"
+              maxlength="20"
+              #username="ngModel"
+            />
+            <div class="alert-danger" *ngIf="f.submitted && username.invalid">
+              <div *ngIf="username.errors.required">Username is required</div>
+              <div *ngIf="username.errors.minlength">
+                Username must be at least 3 characters
+              </div>
+              <div *ngIf="username.errors.maxlength">
+                Username must be at most 20 characters
+              </div>
+            </div>
           </div>
-          <div *ngIf="username.errors.maxlength">
-            Username must be at most 20 characters
-          </div>
-        </div>
-      </div>
 
-      <div class="form-group">
-        <input type="telephone" placeholder="telephone" name="telephone" class="form-control" [(ngModel)]="form.telephone"
-        required
-        telephone
-        #telephone="ngModel"
-      />
-     <div class="alert-danger" *ngIf="f.submitted && telephone.invalid">
-          <div *ngIf="telephone.errors.required">Telephone is required</div>
-          <div *ngIf="telephone.errors.telephone">
-            Telephone must be a valid telephone address
+          <div class="form-group">
+            <input
+              type="telephone"
+              placeholder="telephone"
+              name="telephone"
+              class="form-control"
+              [(ngModel)]="form.telephone"
+              required
+              telephone
+              #telephone="ngModel"
+            />
+            <div class="alert-danger" *ngIf="f.submitted && telephone.invalid">
+              <div *ngIf="telephone.errors.required">Telephone is required</div>
+              <div *ngIf="telephone.errors.telephone">
+                Telephone must be a valid telephone address
+              </div>
+            </div>
           </div>
-        </div>
-    </div>
-  
-      <div class="form-group">
-          <input type="password" placeholder="mot de passe" name="password" class="form-control" [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel">
-          <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">
-            Le mot de passe doit comporter au moins 6 caractères.
+
+          <div class="form-group">
+            <input
+              type="password"
+              placeholder="mot de passe"
+              name="password"
+              class="form-control"
+              [(ngModel)]="form.password"
+              required
+              minlength="6"
+              #password="ngModel"
+            />
+            <div class="alert-danger" *ngIf="f.submitted && password.invalid">
+              <div *ngIf="password.errors.required">Password is required</div>
+              <div *ngIf="password.errors.minlength">
+                Le mot de passe doit comporter au moins 6 caractères.
+              </div>
+            </div>
           </div>
-        </div>
-      
-        </div>
-        <div class="form-group">
-          <button class="submit">créer compte</button>
-        </div>
+          <div class="form-group">
+            <button class="submit">créer compte</button>
+          </div>
         </form>
       </div>
     </div>
@@ -157,4 +92,3 @@
     </div>
   </div>
 </section>
-

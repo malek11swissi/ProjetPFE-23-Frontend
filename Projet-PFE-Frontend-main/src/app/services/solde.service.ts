@@ -24,7 +24,7 @@ export class SoldeService {
     return this.http.get(`${this.baseUrl}/${username}/${listSolde}`);
   }
 
-  createtransfertSolde( value: any): Observable<Object> {
+  createtransfertSolde( value: any): Observable<any> {
     return this.http.post(this.baseUrl + "/transfertSolde", value);
   }
 

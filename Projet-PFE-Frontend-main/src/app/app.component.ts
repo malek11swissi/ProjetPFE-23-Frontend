@@ -1,29 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from './services/token-storage.service';
-import { SoldeService } from './services/solde.service';
-
-import { Observable } from "rxjs";
-import { Solde } from './models/solde';
-
+import { Component, OnInit } from "@angular/core";
+import { TokenStorageService } from "./services/token-storage.service";
+import { SoldeService } from "./services/solde.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit {
-  private role: string="";
+  private role: string = "";
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   showSimpleUserBoard = false;
-
   username: string;
   telephone: string;
-  valeurSolde:string;
+  valeurSolde: string;
 
-  listSolde=true;
-  constructor(private tokenStorageService: TokenStorageService, private soldeService:SoldeService) { }
+  listSolde = true;
+  constructor(
+    private tokenStorageService: TokenStorageService,
+    private soldeService: SoldeService
+  ) {}
 
   ngOnInit() {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -33,9 +31,9 @@ export class AppComponent implements OnInit {
 
       this.role = user.role;
 
-      this.showAdminBoard = this.role =='ROLE_ADMIN';
-      this.showModeratorBoard = this.role == 'ROLE_MARCHAND';
-      this.showSimpleUserBoard = this.role == 'ROLE_CLIENT';
+      this.showAdminBoard = this.role == "ROLE_ADMIN";
+      this.showModeratorBoard = this.role == "ROLE_MARCHAND";
+      this.showSimpleUserBoard = this.role == "ROLE_CLIENT";
 
       this.username = user.username;
       this.telephone = user.telephone;

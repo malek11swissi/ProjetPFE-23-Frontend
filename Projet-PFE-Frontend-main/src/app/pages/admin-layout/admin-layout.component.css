@@ -16,8 +16,7 @@
   #accordionSidebar {
    
     background-color: rgb(240, 242, 243) !important;
-    width: 250px; /* Adjust the width as needed */
-    height: 100vh; /* Adjust the height as needed */
+   
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
    /* border: 1px solid #292c49; /* Add a border to the right side */
   }
