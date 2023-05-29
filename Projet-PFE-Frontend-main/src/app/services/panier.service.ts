@@ -33,4 +33,5 @@ export class PanierService {
   getPaniersList(username: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${username}`);
   }
+  
 }

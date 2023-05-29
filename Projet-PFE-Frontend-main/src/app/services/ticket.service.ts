@@ -29,7 +29,7 @@ export class TicketService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  ticketrwithLoggedcentreTicket( serial: number, value: any): Observable<Object> {
+  ticketrwithLoggedcentreTicket( serial: number, value: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/addTicket/${serial}/`, value);
   }
   getTicketfromSerial(serial: number): Observable<any> {

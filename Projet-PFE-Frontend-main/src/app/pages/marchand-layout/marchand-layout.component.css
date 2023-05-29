@@ -3,8 +3,7 @@
   #accordionSidebar {
    
     background-color: rgb(240, 242, 243) !important;
-    width: 250px;
-    height: 100vh; 
+ 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
   
