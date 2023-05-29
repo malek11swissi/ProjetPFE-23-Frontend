@@ -54,3 +54,24 @@
   .button-container button:hover {
     background-color: #073a0f;
   }
+
+  
+  .modal-header {
+    background-color: #99bec6;
+  }
+  
+  .modal-header h4 {
+    color: #ffffff;
+  }
+  
+
+  .btn-success {
+    background-color: #F7B801;
+    border-color: #F7B801;
+  
+  }
+
+ .btn-primary {
+  background-color: #22577a;
+  border-color: #22577a;
+ } 

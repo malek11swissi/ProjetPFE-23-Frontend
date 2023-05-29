@@ -100,6 +100,7 @@ export class PorteMonnaieComponent implements OnInit {
       
           this.modalService.dismissAll();
           this.submittedTransfert = false;
+          this.getMonSolde();
         }
       } ,
       (error) => console.log(error)
