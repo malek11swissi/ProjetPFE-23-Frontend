@@ -1,15 +1,16 @@
 <h3>Vendre Ticket</h3>
 
 <div style="width: 400px">
-  <form (ngSubmit)="onSubmit()" [hidden]="successSell">
+  <form [formGroup]="formVente" (ngSubmit)="onSubmit()" [hidden]="successSell">
     <div class="form-group">
       <label for="typetoken">Prix</label>
       <br />
-      <select
+      <select formControlName="prix"   [ngClass]="{ 'is-invalid': submitted && prix.errors }"
         name="typetoken"
         [(ngModel)]="ticket.typetoken"
         class="form-control"
       >
+      <option value="null" disabled selected>Sélectionner</option>
         <option
           *ngFor="let typetoken of typetokens | async"
           [ngValue]="typetoken"
@@ -17,6 +18,11 @@
           {{ typetoken.prix }}
         </option>
       </select>
+      <div *ngIf="submitted && prix.errors" class="invalid-feedback">
+        <div *ngIf="prix.errors.required">
+          * Prix est obligatoire
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
@@ -26,9 +32,17 @@
         class="form-control"
         id="numCompteur"
         required
-        [(ngModel)]="ticket.numCompteur"
+        [(ngModel)]="ticket.numCompteur" formControlName="compteur"   [ngClass]="{ 'is-invalid': submitted && compteur.errors }"
         name="numCompteur"
       />
+      <div *ngIf="submitted && compteur.errors" class="invalid-feedback">
+        <div *ngIf="compteur.errors.required">
+          * Compteur est obligatoire
+        </div>
+        <div *ngIf="compteur.errors.pattern">
+          * Format  Compteur invalide (c-xxxxx)
+        </div>
+      </div>
     </div>
 
     <button type="submit" class="btn btn-success">Ajouter</button>

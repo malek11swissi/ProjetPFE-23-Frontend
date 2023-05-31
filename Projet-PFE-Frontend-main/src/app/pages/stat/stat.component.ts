@@ -60,6 +60,8 @@ export class StatComponent implements OnInit {
       for (let ele of this.res) {
         //console.log(ele.typeToken);
         if (ele.typeToken == nom_token) {
+
+          //It finds the index of the year ele.annee in the categories
           var index = this.categories.findIndex(
             (element) => element == ele.annee
           );
@@ -76,6 +78,7 @@ export class StatComponent implements OnInit {
       this.typetokens = data;
       //console.log("Nombre des tokens"+ this.typetokens.length);
     });
+    
     this.statistiqueAnnuelsToken =
       this.statistiqueannuelTokenService.getStatistiqueAnnuelsList();
     this.stat.getStatToken().subscribe(
@@ -92,7 +95,7 @@ export class StatComponent implements OnInit {
             height: 700,
           },
           title: {
-            text: "Ventes des types de Tokens par année",
+            text: "Ventes des types de Tokens par année   ",
           },
           credits: {
             enabled: false,
@@ -123,7 +126,7 @@ export class StatComponent implements OnInit {
         let option: EChartsOption;
         option = {
           title: {
-            text: "Ventes des types de Tokens par année",
+            text: "Ventes des types de Tokens par année    ",
           },
           tooltip: {
             trigger: "axis",

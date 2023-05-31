@@ -25,7 +25,7 @@ export class ISoldeComponent implements OnInit {
     private formBuilder: FormBuilder
   ) {
     this.form_Transfert = this.formBuilder.group({
-      telephone: ["", [Validators.required, Validators.minLength(8)]],
+      telephone: ["", [Validators.required, Validators.pattern(/^\d{8}$/)]],
       somme: ["", [Validators.required, Validators.min(0)]],
     });
 

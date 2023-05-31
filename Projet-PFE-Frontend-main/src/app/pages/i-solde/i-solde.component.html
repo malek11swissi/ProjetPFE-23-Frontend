@@ -66,7 +66,7 @@
           name="telephone"
           formControlName="telephone"
           [ngClass]="{ 'is-invalid': submittedTransfert && telephone.errors }"
-          minlength="8"
+          
         />
         <div
           *ngIf="submittedTransfert && telephone.errors"
@@ -76,7 +76,7 @@
             * Telephone est obligatoire
           </div>
 
-          <div *ngIf="telephone.errors.minlength">
+          <div *ngIf="telephone.errors.pattern">
             * numéro de téléphone doit comporter 8 chiffres
           </div>
         </div>
