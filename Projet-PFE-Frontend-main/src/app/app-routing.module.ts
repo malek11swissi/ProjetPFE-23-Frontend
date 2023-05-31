@@ -16,7 +16,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { UserLayoutComponent } from "./pages/user-layout/user-layout.component";
 import { MarchandLayoutComponent } from "./pages/marchand-layout/marchand-layout.component";
 import { HistoriqueVenteComponent } from "./pages/HistoriqueVente/HistoriqueVente.component";
-import { ISoldeComponent } from "./pages/i-solde/i-solde.component";
+import { PorteMonnaieComponent } from "./pages/porte-monnaie/porte-monnaie.component";
 import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list/commandeLoggedUser-list.component";
 import { VendreTicketComponent } from "./pages/vendre-ticket/vendre-ticket.component";
 import { PackComponent } from "./pages/pack/pack.component";
@@ -46,7 +46,7 @@ const routes: Routes = [
     component: UserLayoutComponent,
     children: [
       { path: "profile", component: ProfileComponent },
-      { path: "i-solde", component: ISoldeComponent },
+      { path: "i-solde", component: PorteMonnaieComponent },
       { path: "compteurs", component: CompteurListComponent },
       { path: "panier", component: PanierListComponent },
       {path: "commandeLoggedUsers",component: CommandeLoggedUserListComponent,},

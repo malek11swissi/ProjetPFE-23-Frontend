@@ -11,6 +11,16 @@ export class PanierService {
 
   constructor(private http: HttpClient) { }
 
+// consulter panier
+  getPaniersList(username: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${username}`);
+  }
+
+  // payer panier 
+  payerPanier(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`);
+  }
+
   getPanier(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -23,15 +33,7 @@ export class PanierService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
 
-  payerPanier(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
-  }
 
-  /*getPaniersList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }*/
-  getPaniersList(username: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${username}`);
-  }
+  
   
 }

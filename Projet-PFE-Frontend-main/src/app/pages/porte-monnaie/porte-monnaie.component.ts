@@ -7,10 +7,10 @@ import { SoldeService } from "src/app/services/solde.service";
 
 @Component({
   selector: "app-porte-monnaie",
-  templateUrl: "./i-solde.component.html",
-  styleUrls: ["./i-solde.component.css"],
+  templateUrl: "./porte-monnaie.component.html",
+  styleUrls: ["./porte-monnaie.component.css"],
 })
-export class ISoldeComponent implements OnInit {
+export class PorteMonnaieComponent implements OnInit {
   monSolde: number = 0;
   transfertSolde: TransfertSolde = new TransfertSolde();
   form_Transfert: FormGroup;
@@ -39,6 +39,8 @@ export class ISoldeComponent implements OnInit {
   }
 
   get montant() {return this.form_Alimenter.get('montant')}
+
+
   getMonSolde() {
     this.soldeService.getMonSolde().subscribe((res) => {
       this.monSolde = res;

@@ -13,6 +13,19 @@ export class TicketService {
 
   constructor(private http: HttpClient) { }
 
+
+
+//vendre ticket 
+  ticketrwithLoggedcentreTicket( serial: number, value: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}/addTicket/${serial}/`, value);
+  }
+
+// consulter historique vente marchand
+  getTicketsMarchand(): Observable<any> {
+    return this.http.get(this.baseUrl+ '/getTicketsMarchand');
+  }
+
+  
   getTicketsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
@@ -29,16 +42,11 @@ export class TicketService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  ticketrwithLoggedcentreTicket( serial: number, value: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}/addTicket/${serial}/`, value);
-  }
+  
   getTicketfromSerial(serial: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${serial}`);
   }
-  getTicketsMarchand(): Observable<any> {
-    return this.http.get(this.baseUrl+ '/getTicketsMarchand');
-  }
-
+  
 
   
 

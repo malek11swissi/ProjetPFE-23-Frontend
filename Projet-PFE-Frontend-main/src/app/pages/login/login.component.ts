@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
         // Verifier role 
         if (this.role == "ROLE_ADMIN") {
-          this.router.navigate(["admin/stat"]);
+          this.router.navigate(["admin/statistique"]);
         }
         if (this.role == "ROLE_CLIENT") {
           this.router.navigate(["user/profile"]);

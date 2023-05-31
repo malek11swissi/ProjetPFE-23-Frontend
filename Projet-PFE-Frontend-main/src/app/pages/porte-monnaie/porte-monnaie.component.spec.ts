@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PorteMonnaieComponent } from './i-solde.component';
+import { PorteMonnaieComponent } from './porte-monnaie.component';
 
 describe('PorteMonnaieComponent', () => {
   let component: PorteMonnaieComponent;
