@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
-import { StatComponent } from "./pages/stat/stat.component";
+import { StatistiqueComponent} from "./pages/statistique/statistique.component";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { RegisterComponent } from "./pages/register/register.component";
@@ -16,7 +16,7 @@ import { UserListComponent } from "./pages/user-list/user-list.component";
 import { PanierListComponent } from "./pages/panier-list/panier-list.component";
 import { CommandeListComponent } from "./pages/commande-list/commande-list.component";
 import { MarchandListComponent } from "./pages/marchand-list/marchand-list.component";
-import { VendreicketComponent } from "./pages/vendre-ticket/vendre-ticket.component";
+import { VendreTicketComponent } from "./pages/vendre-ticket/vendre-ticket.component";
 import { AuthInterceptor } from "./services/interceptor/auth.interceptor";
 import { AdminLayoutComponent } from "./pages/admin-layout/admin-layout.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -32,7 +32,7 @@ import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list
 
 @NgModule({
   declarations: [
-    StatComponent,
+    StatistiqueComponent,
     AppComponent,
     LoginComponent,
     RegisterComponent,
@@ -46,7 +46,7 @@ import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list
     CommandeListComponent,
     CommandeLoggedUserListComponent,
     MarchandListComponent,
-    VendreicketComponent,
+    VendreTicketComponent,
     AdminLayoutComponent,
     UserLayoutComponent,
     MarchandLayoutComponent,

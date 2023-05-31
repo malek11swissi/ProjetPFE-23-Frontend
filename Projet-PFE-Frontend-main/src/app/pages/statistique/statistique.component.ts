@@ -12,10 +12,10 @@ import { EChartsOption } from "echarts";
 
 @Component({
   selector: "app-stat",
-  templateUrl: "./stat.component.html",
-  styleUrls: ["./stat.component.css"],
+  templateUrl: "./statistique.component.html",
+  styleUrls: ["./statistique.component.css"],
 })
-export class StatComponent implements OnInit {
+export class StatistiqueComponent implements OnInit {
   statistiqueAnnuelsToken: Observable<StatistiqueAnnuelToken[]>;
   res: any;
   categories = new Array<string>();

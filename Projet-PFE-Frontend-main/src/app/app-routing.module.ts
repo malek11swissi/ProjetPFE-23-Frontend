@@ -1,5 +1,5 @@
 import { Component, NgModule } from "@angular/core";
-import { StatComponent } from "./pages/stat/stat.component";
+import {StatistiqueComponent } from "./pages/statistique/statistique.component";
 import { RegisterComponent } from "./pages/register/register.component";
 import { LoginComponent } from "./pages/login/login.component";
 import { HomeComponent } from "./pages/home/home.component";
@@ -18,7 +18,7 @@ import { MarchandLayoutComponent } from "./pages/marchand-layout/marchand-layout
 import { HistoriqueVenteComponent } from "./pages/HistoriqueVente/HistoriqueVente.component";
 import { ISoldeComponent } from "./pages/i-solde/i-solde.component";
 import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list/commandeLoggedUser-list.component";
-import { VendreicketComponent } from "./pages/vendre-ticket/vendre-ticket.component";
+import { VendreTicketComponent } from "./pages/vendre-ticket/vendre-ticket.component";
 import { PackComponent } from "./pages/pack/pack.component";
 
 const routes: Routes = [
@@ -33,7 +33,7 @@ const routes: Routes = [
     path: "admin",
     component: AdminLayoutComponent,
     children: [
-      { path: "stat", component: StatComponent },
+      { path: "statistique", component: StatistiqueComponent },
       { path: "commandes", component: CommandeListComponent },
       { path: "typetokens", component: TypetokenListComponent },
       { path: "marchands", component: MarchandListComponent },
@@ -59,7 +59,7 @@ const routes: Routes = [
     component: MarchandLayoutComponent,
     children: [
       { path: "profile", component: ProfileComponent },
-      { path: "vendreticket", component: VendreicketComponent },
+      { path: "vendreticket", component:VendreTicketComponent },
       { path: "HistoriqueVente", component: HistoriqueVenteComponent },
       { path: "pack", component: PackComponent },
     ],

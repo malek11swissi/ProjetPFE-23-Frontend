@@ -18,7 +18,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   templateUrl: "./vendre-ticket.component.html",
   styleUrls: ["./vendre-ticket.component.css"],
 })
-export class VendreicketComponent implements OnInit {
+export class VendreTicketComponent implements OnInit {
   ticket: Ticket = new Ticket();
   typetokens: Observable<Typetoken[]>;
   packs: Observable<Pack[]>;
