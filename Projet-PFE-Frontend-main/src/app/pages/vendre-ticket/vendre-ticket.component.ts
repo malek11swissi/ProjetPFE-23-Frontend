@@ -7,8 +7,6 @@ import { Compteur } from "../../models/compteur";
 import { TypetokenService } from "../../services/typetoken.service";
 import { TicketService } from "../../services/ticket.service";
 import { TokenStorageService } from "../../services/token-storage.service";
-import { CompteurService } from "../../services/compteur.service";
-import { CompteurLoggedUserService } from "../../services/compteurLoggedUser.service";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrService } from "ngx-toastr";
 import { PackService } from "src/app/services/pack.service";
@@ -37,10 +35,8 @@ export class VendreicketComponent implements OnInit {
   constructor(
     private ticketService: TicketService,
     private typetokenService: TypetokenService,
-    private compteurService: CompteurService,
     private router: Router,
     private tokenStorageService: TokenStorageService,
-    private compteurLoggedUserService: CompteurLoggedUserService,
     private modalService: NgbModal,
     private packservice: PackService,
     private toastr: ToastrService
@@ -61,15 +57,6 @@ export class VendreicketComponent implements OnInit {
     this.ticket = new Ticket();
   }
 
-  save() {
-    /*this.serial = this.getRndLong(10000000000000, 100000000000000)
-    this.ticketService.ticketrwithLoggedcentreTicket(this.username, this.serial, this.ticket)
-      .subscribe(data => console.log(data), error => console.log(error));
-    //this.ticket = new Ticket();
-    this.prix = this.ticket.typetoken.prix;
-    this.numCompteur = this.ticket.numCompteur;
-    this.router.navigate(['tickets', this.serial, this.numCompteur]);*/
-  }
 
   onSubmit() {
     this.submitted = true;

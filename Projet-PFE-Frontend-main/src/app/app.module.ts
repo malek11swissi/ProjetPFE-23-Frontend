@@ -27,7 +27,7 @@ import { MarchandLayoutComponent } from "./pages/marchand-layout/marchand-layout
 import { CommonModule } from "@angular/common";
 import { HistoriqueVenteComponent } from "./pages/HistoriqueVente/HistoriqueVente.component";
 import { PackComponent } from "./pages/pack/pack.component";
-import { PorteMonnaieComponent } from "./pages/porte-monnaie/porte-monnaie.component";
+import { ISoldeComponent} from "./pages/i-solde/i-solde.component";
 import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list/commandeLoggedUser-list.component";
 
 @NgModule({
@@ -52,7 +52,7 @@ import { CommandeLoggedUserListComponent } from "./pages/commandeLoggedUser-list
     MarchandLayoutComponent,
     HistoriqueVenteComponent,
     PackComponent,
-    PorteMonnaieComponent,
+    ISoldeComponent,
   ],
 
   imports: [

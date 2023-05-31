@@ -27,18 +27,22 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.authService.login(this.form).subscribe(
       (data) => {
+        // prend data authentifier 
         console.log("data", data);
         if (data.accessToken == "Votre compte est bloqué") {
           console.log("enter cond");
           this.errorMessage = "Votre compte est bloqué";
           this.isLocked = true;
         }
+        // Save token et user 
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
 
         this.isLoginFailed = false;
         this.role = this.tokenStorage.getUser().role;
 
+
+        // Verifier role 
         if (this.role == "ROLE_ADMIN") {
           this.router.navigate(["admin/stat"]);
         }

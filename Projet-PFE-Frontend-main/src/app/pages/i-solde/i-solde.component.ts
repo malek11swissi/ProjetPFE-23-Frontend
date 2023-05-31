@@ -7,10 +7,10 @@ import { SoldeService } from "src/app/services/solde.service";
 
 @Component({
   selector: "app-porte-monnaie",
-  templateUrl: "./porte-monnaie.component.html",
-  styleUrls: ["./porte-monnaie.component.css"],
+  templateUrl: "./i-solde.component.html",
+  styleUrls: ["./i-solde.component.css"],
 })
-export class PorteMonnaieComponent implements OnInit {
+export class ISoldeComponent implements OnInit {
   monSolde: number = 0;
   transfertSolde: TransfertSolde = new TransfertSolde();
   form_Transfert: FormGroup;

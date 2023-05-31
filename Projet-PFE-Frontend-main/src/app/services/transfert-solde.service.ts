@@ -34,8 +34,6 @@ export class TransfertSoldeService {
   getTransfertSoldeLoggedUsername(username: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${username}`);
   }
-  /*getTransfertSoldesList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
-  }*/
+  
 
 }

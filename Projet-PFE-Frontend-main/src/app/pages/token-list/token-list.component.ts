@@ -10,12 +10,10 @@ import { ToastrService } from "ngx-toastr";
 import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { TokenStorageService } from "../../services/token-storage.service";
 import { Compteur } from "../../models/compteur";
-import { CompteurLoggedUserService } from "../../services/compteurLoggedUser.service";
 import { CompteurService } from "../../services/compteur.service";
-
 import { TypetokenService } from "../../services/typetoken.service";
 import { Typetoken } from "../../models/typetoken";
-import { TokenLoggedUserService } from "src/app/services/tokenLoggedUser.service";
+
 
 @Component({
   selector: "app-token-list",
@@ -45,9 +43,9 @@ export class TokenListComponent implements OnInit {
     private tokenStorageService: TokenStorageService,
     private tokenService: TokenService,
     private compteurService: CompteurService,
-    private compteurLoggedUserService: CompteurLoggedUserService,
+
     private typetokenService: TypetokenService,
-    private tokenloggeService: TokenLoggedUserService
+  
   ) {}
 
   ngOnInit() {
