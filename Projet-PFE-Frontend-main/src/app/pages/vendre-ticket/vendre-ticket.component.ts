@@ -13,6 +13,7 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrService } from "ngx-toastr";
 import { PackService } from "src/app/services/pack.service";
 import { Pack } from "src/app/models/Pack";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-vendre-ticket",
@@ -28,12 +29,13 @@ export class VendreicketComponent implements OnInit {
   submitted = false;
   username: string;
   serial: number;
-  prix: number;
+
   numCompteur: string;
 
   @ViewChild("contentSell", { static: true })
   private contentSell: TemplateRef<any>;
   successSell: boolean = false;
+  formVente:FormGroup;
   constructor(
     private ticketService: TicketService,
     private typetokenService: TypetokenService,
@@ -43,13 +45,20 @@ export class VendreicketComponent implements OnInit {
     private compteurLoggedUserService: CompteurLoggedUserService,
     private modalService: NgbModal,
     private packservice: PackService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private fb:FormBuilder
   ) {}
 
   ngOnInit() {
+    this.formVente = this.fb.group({
+      prix:['null' , Validators.required],
+      compteur:[Validators.required, Validators.pattern(/^c-\d{5}$/)]
+    })
     this.reloadData();
   }
 
+  get prix() {return this.formVente.get('prix')};
+  get compteur() {return this.formVente.get('compteur')};
   reloadData() {
     this.typetokens = this.typetokenService.getTypetokensByUserList();
     const user = this.tokenStorageService.getUser();
@@ -73,6 +82,10 @@ export class VendreicketComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    if(this.formVente.invalid)
+    {
+      return
+    }
     this.modalService.open(this.contentSell, {
       windowClass: "customModal",
       backdrop: "static",

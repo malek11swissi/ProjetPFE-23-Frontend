@@ -83,13 +83,13 @@
           formControlName="telephone"
           name="telephone"
           [ngClass]="{ 'is-invalid': submitted && telephone.errors }"
-          minlength="8"
+        
         />
         <div *ngIf="submitted && telephone.errors" class="invalid-feedback">
           <div *ngIf="telephone.errors.required">
             * Téléphone est obligatoire
           </div>
-          <div *ngIf="telephone.errors.minlength">
+          <div *ngIf="telephone.errors.pattern">
             * numéro de téléphone doit comporter 8 chiffres
           </div>
         </div>

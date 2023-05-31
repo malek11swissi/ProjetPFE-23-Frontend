@@ -35,7 +35,7 @@ export class ProfileComponent implements OnInit {
   ) {
     this.form_Update_Profile = this.formBuilder.group({
       username: ["", [Validators.required, Validators.minLength(3)]],
-      telephone: ["", [Validators.required, Validators.minLength(8)]],
+      telephone: ["", [Validators.required, Validators.pattern(/^\d{8}$/)]],
       libelle: ["", [Validators.required, Validators.minLength(3)]],
       gouvernorat: ["", [Validators.required]],
     });
